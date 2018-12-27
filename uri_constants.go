@@ -36,6 +36,8 @@ const (
 	FUTURES_INSTRUMENT_ORDER_BATCH_CANCEL = "/api/futures/v3/cancel_batch_orders/{instrument_id}"
 	FUTURES_FILLS                         = "/api/futures/v3/fills"
 
+	SPOT_ACCOUNTS                           = "/api/spot/v3/accounts"
+
 	SWAP_INSTRUMENT_ACCOUNT                 = "/api/swap/v3/{instrument_id}/accounts"
 	SWAP_INSTRUMENT_POSITION                = "/api/swap/v3/{instrument_id}/position"
 	SWAP_ACCOUNTS                           = "/api/swap/v3/accounts"
