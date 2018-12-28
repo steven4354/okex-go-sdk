@@ -78,3 +78,20 @@ func (client *Client) PostSpotOrder(limit bool, buySide bool, instrumentId strin
 	return &res, nil
 }
 
+/*
+POST /api/spot/v3/orders_pending
+*/
+func (client *Client) GetAllPendingOrders() (*[]SpotPendingOrderInfo, error) {
+	var sa []SpotPendingOrderInfo
+	sa = make([]SpotPendingOrderInfo, 0)
+	
+	if _, err := client.Request(GET, SPOT_PENDING_ORDERS, nil, &sa); err != nil {
+		return nil, err
+	}
+	return &sa, nil
+}
+
+func (client *Client) GetSpecificPendingOrders() () {
+	// TODO: created this
+	// https://www.okex.com/docs/en/#spot-huo-qu-wei-wan-cheng-ding-dan
+}
