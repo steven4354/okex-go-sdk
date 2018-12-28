@@ -20,4 +20,3 @@ func TestGetSpotAccount(t *testing.T) {
 	// assert.True(t, err == nil)
 	// fmt.Printf("%+v", sp)
 }
-s
