@@ -37,6 +37,8 @@ const (
 	FUTURES_FILLS                         = "/api/futures/v3/fills"
 
 	SPOT_ACCOUNTS                           = "/api/spot/v3/accounts"
+	SPOT_ORDER                              = "/api/spot/v3/orders"
+	SPOT_PENDING_ORDERS                     = "/api/spot/v3/orders_pending"
 
 	SWAP_INSTRUMENT_ACCOUNT                 = "/api/swap/v3/{instrument_id}/accounts"
 	SWAP_INSTRUMENT_POSITION                = "/api/swap/v3/{instrument_id}/position"

@@ -1,11 +1,6 @@
 package okex
 
 /*
- OKEX ws api websocket test & sample
- @author Lingting Fu
- @date 2018-12-27
- @version 1.0.0
-*/
 
 import (
 	"testing"
@@ -44,3 +39,4 @@ func TestOKWSAgent_AllInOne(t *testing.T) {
 	agent.Stop()
 	time.Sleep(1 * time.Second)
 }
+*/

@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"log"
 )
 
 /*
@@ -106,6 +107,7 @@ func (client *Client) Request(method string, requestPath string,
 	}
 
 	responseBodyString := string(body)
+	log.Printf("body %+v err %+v", responseBodyString, err)
 
 	response.Header.Add(ResultDataJsonString, responseBodyString)
 

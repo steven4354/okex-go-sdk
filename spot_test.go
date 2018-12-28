@@ -7,16 +7,29 @@ package okex
  @version 1.0.0
 */
 
-import (
-	"fmt"
-	"github.com/stretchr/testify/assert"
-	"reflect"
-	"testing"
-)
+// import (
+// 	"fmt"
+// 	"github.com/stretchr/testify/assert"
+// 	"testing"
+// )
 
-func TestGetSpotAccount(t *testing.T) {
-	// c := NewTestClient()
-	// sp, err := c.GetSwapAccount("BTC-USD-SWAP")
-	// assert.True(t, err == nil)
-	// fmt.Printf("%+v", sp)
-}
+// func TestGetSpotAccount(t *testing.T) {
+// 	c := NewTestClient()
+// 	sp, err := c.GetSpotAccounts()
+// 	assert.True(t, err == nil)
+// 	fmt.Printf("%+v err %+v", sp, err)
+// }
+
+// func TestPlaceSpotOrder(t *testing.T) {
+// 	c := NewTestClient()
+// 	sp, err := c.PostSpotOrder(true, false, "ETH-USDT", "0.5", "0.04")
+// 	assert.True(t, err == nil)
+// 	fmt.Printf("%+v err %+v", sp, err)
+// }
+
+// func TestGetAllPendingSpotOrders(t *testing.T) {
+// 	c := NewTestClient()
+// 	sp, err := c.GetAllPendingOrders()
+// 	assert.True(t, err == nil)
+// 	fmt.Printf("%+v err %+v", sp, err)
+// }

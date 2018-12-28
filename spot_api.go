@@ -9,14 +9,15 @@ package okex
 
 import (
 	// "errors"
+	"log"
 )
 
 /*
 GET /api/spot/v3/accounts
 */
-
-func (client *Client) getSpotAccounts(uri string) (*SpotAccounts, error) {
-	sa := SpotAccounts{}
+func (client *Client) getSpotAccounts(uri string) (*[]SpotAccountInfo, error) {
+	var sa []SpotAccountInfo
+	sa = make([]SpotAccountInfo, 0)
 	if _, err := client.Request(GET, uri, nil, &sa); err != nil {
 		return nil, err
 	}
@@ -26,6 +27,54 @@ func (client *Client) getSpotAccounts(uri string) (*SpotAccounts, error) {
 /*
 GET /api/spot/v3/accounts
 */
-func (client *Client) GetSpotAccounts() (*SpotAccounts, error) {
+func (client *Client) GetSpotAccounts() (*[]SpotAccountInfo, error) {
 	return client.getSpotAccounts(SPOT_ACCOUNTS)
 }
+
+/*
+POST /api/spot/v3/orders
+*/
+func (client *Client) PostSpotOrder(limit bool, buySide bool, instrumentId string, price string, qty string) (*SpotOrderInfo, error) {
+	// by default margin trading is off
+	var req interface{}
+	if limit == true {
+		req = PlaceSpotLimitOrderInfo{
+			getMarketLimit(limit), 
+			getBuySell(buySide), 
+			instrumentId,
+			1,
+			qty,
+			price,
+		}	
+	} else if limit == false && buySide == true {
+		req = PlaceSpotMarketOrderInfo{
+			getMarketLimit(limit), 
+			getBuySell(buySide), 
+			instrumentId,
+			1,
+			"0",
+			qty,
+		}	
+	} else if limit == false && buySide == false {
+		req = PlaceSpotMarketOrderInfo{
+			getMarketLimit(limit), 
+			getBuySell(buySide), 
+			instrumentId,
+			1,
+			qty,
+			"0",
+		}	
+	}
+	
+	log.Printf("req %+v", req)
+
+	// return nil, nil
+
+	res := SpotOrderInfo{}
+	
+	if _, err := client.Request(POST, SPOT_ORDER, req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+

@@ -1,5 +1,7 @@
 package okex
 
+/*
+
 import (
 	"fmt"
 	"testing"
@@ -10,9 +12,6 @@ const (
 	currency     = "BTC"
 )
 
-/*
- OKEX general api's testing
-*/
 func TestGetServerTime(t *testing.T) {
 	serverTime, err := NewTestClient().GetServerTime()
 	if err != nil {
@@ -29,9 +28,6 @@ func TestGetFuturesExchangeRate(t *testing.T) {
 	FmtPrintln("Current exchange rate: ", exchangeRate)
 }
 
-/*
- Futures market api's testing
-*/
 func TestGetFuturesInstruments(t *testing.T) {
 	Instruments, err := NewTestClient().GetFuturesInstruments()
 	if err != nil {
@@ -161,9 +157,6 @@ func TestGetFuturesInstrumentLiquidation(t *testing.T) {
 	FmtPrintln("Futures Instrument liquidation: ", liquidation)
 }
 
-/*
- Futures trade api's testing
-*/
 func TestGetFuturesPositions(t *testing.T) {
 	position, err := NewTestClient().GetFuturesPositions()
 	if err != nil {
@@ -327,3 +320,4 @@ func TestGetFuturesFills(t *testing.T) {
 	}
 	FmtPrintln("Futures Instrument fills: ", result)
 }
+*/

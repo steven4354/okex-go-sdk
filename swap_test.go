@@ -7,6 +7,7 @@ package okex
  @version 1.0.0
 */
 
+/*
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
@@ -224,3 +225,4 @@ func TestClient_reflect(t *testing.T) {
 	tp := reflect.TypeOf(i)
 	fmt.Println(tp)
 }
+*/
